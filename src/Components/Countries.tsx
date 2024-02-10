@@ -1,4 +1,6 @@
+// Countries.tsx
 import React, { useEffect, useState } from "react";
+import CountryPiece from "./Countrypiece";
 
 interface Country {
   numericCode: string;
@@ -75,28 +77,9 @@ const Countries: React.FC = () => {
       </section>
 
       <div className="grid">
-        {filteredCountries.map((country: Country) => {
-          const { numericCode, name, population, region, capital, flag } =
-            country;
-
-          return (
-            <article key={numericCode}>
-              <div className="piece">
-                <img className="flags" src={flag} alt={name} />
-                <h2 className="name">{name}</h2>
-                <h4>
-                  Population: <span>{population}</span>
-                </h4>
-                <h4>
-                  Region: <span>{region}</span>
-                </h4>
-                <h4>
-                  Capital: <span>{capital}</span>
-                </h4>
-              </div>
-            </article>
-          );
-        })}
+        {filteredCountries.map((country: Country) => (
+          <CountryPiece key={country.numericCode} country={country} />
+        ))}
       </div>
     </>
   );

@@ -1,4 +1,6 @@
+// Header.js
 import React, { useState } from "react";
+import Style from "./Style";
 
 const Header: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -9,6 +11,8 @@ const Header: React.FC = () => {
 
   return (
     <>
+      <Style darkMode={darkMode} />
+
       <header className={`header ${darkMode ? "dark" : "light"}`}>
         <div>
           <h1>Where in the world?</h1>
@@ -20,42 +24,6 @@ const Header: React.FC = () => {
           </span>
         </div>
       </header>
-
-      <style>{`
-        body {
-          background-color: ${darkMode ? "#2b3945" : "#fff"};
-          color: ${darkMode ? "#fff" : "#000"};
-        }
-
-        input {
-          background-color: ${darkMode ? "#2b3945" : "#fff"};
-          color: ${darkMode ? "#fff" : "#000"};
-          caret-color: ${darkMode ? "#fff" : "#000"};
-        }
-
-        input::placeholder {
-          color: ${darkMode ? "#fff" : "#000"};
-        }
-
-        select {
-          background-color: ${darkMode ? "#2b3945" : "#fff"};
-          color: ${darkMode ? "#fff" : "#000"};
-        }
-
-        select option {
-          background-color: ${darkMode ? "#2b3945" : "#fff"};
-          color: ${darkMode ? "#fff" : "#000"};
-        }
-
-        .piece {
-          background-color: ${darkMode ? "#2b3743" : "lightgray"};
-          color: ${darkMode ? "#fff" : "#000"};
-        }
-
-        .toggle-mode {
-          cursor: pointer;
-        }
-      `}</style>
     </>
   );
 };
