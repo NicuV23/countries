@@ -1,4 +1,3 @@
-// Style.tsx
 import React from "react";
 
 interface StyleProps {
@@ -11,6 +10,7 @@ const Style: React.FC<StyleProps> = ({ darkMode }) => {
       body {
         background-color: ${darkMode ? "#2b3945" : "#fff"};
         color: ${darkMode ? "#fff" : "#000"};
+        transition: background-color 0.3s, color 0.3s;
       }
 
       input {
@@ -40,6 +40,7 @@ const Style: React.FC<StyleProps> = ({ darkMode }) => {
 
       .toggle-mode {
         cursor: pointer;
+        color: ${darkMode ? "#fff" : "#000"};
       }
     `}</style>
   );

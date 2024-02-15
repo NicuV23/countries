@@ -1,15 +1,16 @@
-// CountryPiece.tsx
 import React from "react";
 
+export interface Country {
+  numericCode: string;
+  name: string;
+  population: number;
+  region: string;
+  capital: string;
+  flag: string;
+}
+
 interface CountryPieceProps {
-  country: {
-    numericCode: string;
-    name: string;
-    population: number;
-    region: string;
-    capital: string;
-    flag: string;
-  };
+  country: Country;
 }
 
 const CountryPiece: React.FC<CountryPieceProps> = ({ country }) => {

@@ -1,6 +1,6 @@
-// Countries.tsx
 import React, { useEffect, useState } from "react";
-import CountryPiece from "./Countrypiece";
+import CountryFilter from "./CountryFilter";
+import CountryList from "./CountryList";
 
 interface Country {
   numericCode: string;
@@ -47,40 +47,13 @@ const Countries: React.FC = () => {
 
   return (
     <>
-      <section className="filter">
-        <div className="input">
-          <input
-            type="search"
-            name="search"
-            id="search"
-            placeholder="Search for a country..."
-            value={filteredName || ""}
-            onChange={handleNameChange}
-          />
-        </div>
-        <div>
-          <select
-            name="select"
-            id="select"
-            className="select"
-            value={filteredRegion || ""}
-            onChange={handleRegionChange}
-          >
-            <option value="">Filter by Region</option>
-            <option value="Africa">Africa</option>
-            <option value="Americas">Americas</option>
-            <option value="Asia">Asia</option>
-            <option value="Europe">Europe</option>
-            <option value="Oceania">Oceania</option>
-          </select>
-        </div>
-      </section>
-
-      <div className="grid">
-        {filteredCountries.map((country: Country) => (
-          <CountryPiece key={country.numericCode} country={country} />
-        ))}
-      </div>
+      <CountryFilter
+        filteredName={filteredName}
+        filteredRegion={filteredRegion}
+        handleNameChange={handleNameChange}
+        handleRegionChange={handleRegionChange}
+      />
+      <CountryList countries={filteredCountries} />
     </>
   );
 };

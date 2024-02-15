@@ -1,4 +1,3 @@
-// Header.js
 import React, { useState } from "react";
 import Style from "./Style";
 
@@ -12,7 +11,6 @@ const Header: React.FC = () => {
   return (
     <>
       <Style darkMode={darkMode} />
-
       <header className={`header ${darkMode ? "dark" : "light"}`}>
         <div>
           <h1>Where in the world?</h1>
