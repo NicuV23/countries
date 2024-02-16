@@ -8,13 +8,13 @@ const Style: React.FC<StyleProps> = ({ darkMode }) => {
   return (
     <style>{`
       body {
-        background-color: ${darkMode ? "#2b3945" : "#fff"};
+        background-color: ${darkMode ? "#0a1011" : "#fff"};
         color: ${darkMode ? "#fff" : "#000"};
-        transition: background-color 0.3s, color 0.3s;
+        transition: background-color 0.7s, color 0.7s;
       }
 
       input {
-        background-color: ${darkMode ? "#2b3945" : "#fff"};
+        background-color: ${darkMode ? "rgba(15, 21, 26, 0.9)" : "lightgray"};
         color: ${darkMode ? "#fff" : "#000"};
         caret-color: ${darkMode ? "#fff" : "#000"};
       }
@@ -24,24 +24,31 @@ const Style: React.FC<StyleProps> = ({ darkMode }) => {
       }
 
       select {
-        background-color: ${darkMode ? "#2b3945" : "#fff"};
         color: ${darkMode ? "#fff" : "#000"};
+        background-color: ${darkMode ? "rgba(15, 21, 26, 0.9)" : "lightgray"}
       }
 
       select option {
-        background-color: ${darkMode ? "#2b3945" : "#fff"};
         color: ${darkMode ? "#fff" : "#000"};
+        background-color: ${darkMode ? "rgba(15, 21, 26, 0.9)" : "lightgray"}
       }
 
       .piece {
-        background-color: ${darkMode ? "#2b3743" : "lightgray"};
-        color: ${darkMode ? "#fff" : "#000"};
+       color: ${darkMode ? "#fff" : "#000"};
+        background-color: ${darkMode ? "rgba(15, 21, 26, 0.9)" : "lightgray"}
       }
 
       .toggle-mode {
         cursor: pointer;
         color: ${darkMode ? "#fff" : "#000"};
+        background-color: ${darkMode ? "rgba(15, 21, 26, 0.9)" : "lightgray"}
       }
+
+      .title{
+        color: ${darkMode ? "#fff" : "#000"};
+        background-color: ${darkMode ? "rgba(15, 21, 26, 0.9)" : "lightgray"}
+      }
+
     `}</style>
   );
 };

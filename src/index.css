@@ -95,3 +95,13 @@ select {
   outline: none;
   color: white;
 }
+
+.toggle-mode {
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.title {
+  padding: 5px;
+  border-radius: 10px;
+}

@@ -13,7 +13,7 @@ const Header: React.FC = () => {
       <Style darkMode={darkMode} />
       <header className={`header ${darkMode ? "dark" : "light"}`}>
         <div>
-          <h1>Where in the world?</h1>
+          <h1 className="title">Where in the world?</h1>
         </div>
 
         <div>
