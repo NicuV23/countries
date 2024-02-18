@@ -34,7 +34,7 @@ const Style: React.FC<StyleProps> = ({ darkMode }) => {
       }
 
       .piece {
-       color: ${darkMode ? "#fff" : "#000"};
+        color: ${darkMode ? "#fff" : "#000"};
         background-color: ${darkMode ? "rgba(15, 21, 26, 0.9)" : "lightgray"}
       }
 
@@ -47,6 +47,37 @@ const Style: React.FC<StyleProps> = ({ darkMode }) => {
       .title{
         color: ${darkMode ? "#fff" : "#000"};
         background-color: ${darkMode ? "rgba(15, 21, 26, 0.9)" : "lightgray"}
+      }
+
+      .pagination {
+        list-style: none;
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .number {
+        padding: 8px 12px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        background-color: ${darkMode ? "#222" : "#fff"};
+        color: ${darkMode ? "#fff" : "#000"};
+        border: 1px solid ${darkMode ? "#444" : "#000"};
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      .number:hover {
+        background-color: ${darkMode ? "#fff" : "#000"};
+        color: ${darkMode ? "#000" : "#fff"};
+
+      }
+
+      .active .number {
+        background-color: ${darkMode ? "#000" : "#fff"};
+        color: ${darkMode ? "#fff" : "#000"};
+
       }
 
     `}</style>

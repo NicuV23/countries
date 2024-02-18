@@ -1,8 +1,8 @@
 import React from "react";
-import CountryPiece from "./Countrypiece";
+import CountryPiece, { Country } from "./CountryPiece";
 
 interface CountryListProps {
-  countries: import("./Countrypiece").Country[];
+  countries: Country[];
 }
 
 const CountryList: React.FC<CountryListProps> = ({ countries }) => {
