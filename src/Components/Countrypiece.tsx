@@ -9,13 +9,13 @@ export interface Country {
   flag: string;
 }
 
-interface CountryPieceProps {
-  country: Country;
-}
-
-const CountryPiece: React.FC<CountryPieceProps> = ({ country }) => {
-  const { name, population, region, capital, flag } = country;
-
+const CountryPiece: React.FC<Country> = ({
+  name,
+  population,
+  region,
+  capital,
+  flag,
+}) => {
   return (
     <article>
       <div className="piece">

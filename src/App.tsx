@@ -1,6 +1,6 @@
 import React from "react";
-import Countries from "./Components/Countries";
-import Header from "./Components/Header";
+import Countries from "./components/Countries";
+import Header from "./components/Header";
 
 function App() {
   return (
