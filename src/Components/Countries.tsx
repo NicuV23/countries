@@ -15,7 +15,7 @@ interface Country {
   flag: string;
 }
 
-const url = "https://restcountries.com/v2/all";
+const URL = "https://restcountries.com/v2/all";
 
 const Countries: React.FC = () => {
   const [countries, setCountries] = useState<Country[]>([]);
@@ -26,7 +26,7 @@ const Countries: React.FC = () => {
   const countriesPerPage = 8;
 
   const fetchCountryData = async () => {
-    const response = await fetch(url);
+    const response = await fetch(URL);
     const countriesData: Country[] = await response.json();
     setCountries(countriesData);
   };
