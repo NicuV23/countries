@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import CountryFilter from "./CountryFilter";
 import CountryList from "./CountryList";
 import Pagination from "./Pagination";
-import useDebouncedValue from "./UseDebouncedValue";
+import useDebouncedValue from "../hooks/useDebouncedValue";
 
 interface Country {
   numericCode: string;
