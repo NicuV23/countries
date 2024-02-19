@@ -4,7 +4,7 @@ interface StyleProps {
   darkMode: boolean;
 }
 
-const Style: React.FC<StyleProps> = ({ darkMode }) => {
+const STYLE: React.FC<StyleProps> = ({ darkMode }) => {
   return (
     <style>{`
       body {
@@ -84,4 +84,4 @@ const Style: React.FC<StyleProps> = ({ darkMode }) => {
   );
 };
 
-export default Style;
+export default STYLE;
