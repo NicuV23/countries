@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import CountryFilter from "./CountryFilter";
 import CountryList from "./CountryList";
 import Pagination from "./Pagination";
@@ -68,12 +68,11 @@ const Countries: React.FC = () => {
     return nameMatches && regionMatches;
   });
 
-  const indexOfLastCountry = currentPage * countriesPerPage;
-  const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
-  const currentCountries = filteredCountries.slice(
-    indexOfFirstCountry,
-    indexOfLastCountry
-  );
+  const currentCountries = useMemo(() => {
+    const indexOfLastCountry = currentPage * countriesPerPage;
+    const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
+    return filteredCountries.slice(indexOfFirstCountry, indexOfLastCountry);
+  }, [currentPage, countriesPerPage, filteredCountries]);
 
   return (
     <>
