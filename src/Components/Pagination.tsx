@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 interface PaginationProps {
   countriesPerPage: number;
@@ -13,10 +13,19 @@ const Pagination: React.FC<PaginationProps> = ({
   currentPage,
   onPageChange,
 }) => {
-  const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(totalCountries / countriesPerPage); i++) {
-    pageNumbers.push(i);
-  }
+  const [pageNumbers, setPageNumbers] = useState<number[]>([]);
+
+  useEffect(() => {
+    const calculatePageNumbers = () => {
+      const numbers = [];
+      for (let i = 1; i <= Math.ceil(totalCountries / countriesPerPage); i++) {
+        numbers.push(i);
+      }
+      return numbers;
+    };
+
+    setPageNumbers(calculatePageNumbers());
+  }, [totalCountries, countriesPerPage]);
 
   return (
     <nav>
